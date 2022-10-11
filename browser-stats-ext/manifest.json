@@ -1,0 +1,10 @@
+{
+    "name": "Browser Stats",
+    "description": "Displays Statistics About Your Browser and Activity",
+    "version": "1.0",
+    "manifest_version": 3,
+    "permissions": ["activeTab", "scripting", "history", "storage"],
+    "action": {
+      "default_popup": "popup.html"
+    }
+  }

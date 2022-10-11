@@ -1,0 +1,9 @@
+#main-wrapper {
+    width: 400px;
+    height: 200px;
+}
+
+#main-wrapper div {
+    size: 20px;
+    margin-top: 10px;
+}

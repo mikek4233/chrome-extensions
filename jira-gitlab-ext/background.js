@@ -1,4 +1,3 @@
-
 // Open the options tab to force the user to fill in the information
 chrome.runtime.onInstalled.addListener(() => {
   chrome.tabs.create({ url: "options.html" });
@@ -15,3 +14,16 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
       });
   }
 });
+
+chrome.tabs.onUpdated.addListener( function (tabId, changeInfo, tab) {
+  if (changeInfo.status == 'complete' && tab.active) {
+    chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
+      debugger
+      if (tab.url != "" && tab.url.includes('.atlassian.net/browse/')){
+        chrome.tabs.executeScript(tab.id, {file: 'content-script.js'}, ([results]) => {
+          console.log(results);
+        });
+      }
+  });
+  }
+})

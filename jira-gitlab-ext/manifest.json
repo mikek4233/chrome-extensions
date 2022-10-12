@@ -6,16 +6,17 @@
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": ["storage", "activeTab", "scripting"],
-  "action": {
-    "default_popup": "popup.html",
-    "default_icon": {
-      "16": "/images/gitlab16.png",
-      "32": "/images/gitlab32.png",
-      "48": "/images/gitlab48.png",
-      "128": "/images/gitlab128.png"
+  "permissions": ["storage", "activeTab", "scripting", "tabs"],
+  "host_permissions": [
+    "https://*.atlassian.net/browse/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://*.atlassian.net/browse/*"],
+      "js": ["content-script.js"]
     }
-  },
+  ],
+  "action": {},
   "icons": {
     "16": "/images/gitlab16.png",
     "32": "/images/gitlab32.png",

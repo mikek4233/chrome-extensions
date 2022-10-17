@@ -20,4 +20,6 @@ To test those extensions, download this folder and follow the steps in the link 
 Shows stats about your browser usage
 
 - Number of tabs in the last 24 hours
+- Most Viewed page
 - Time since browser was opened
+- Chrome version

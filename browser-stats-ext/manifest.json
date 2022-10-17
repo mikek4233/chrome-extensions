@@ -6,5 +6,10 @@
     "permissions": ["activeTab", "scripting", "history", "storage"],
     "action": {
       "default_popup": "popup.html"
+    }, "icons": {
+      "16": "/images/browser_stats16.png",
+      "32": "/images/browser_stats32.png",
+      "48": "/images/browser_stats48.png",
+      "128": "/images/browser_stats128.png"
     }
   }

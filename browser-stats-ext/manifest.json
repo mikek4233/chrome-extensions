@@ -11,5 +11,10 @@
       "32": "/images/browser_stats32.png",
       "48": "/images/browser_stats48.png",
       "128": "/images/browser_stats128.png"
-    }
+    }, "content_scripts": [
+      {
+        "matches": ["https://*/*"],
+        "js": ["content-script.js"]
+      }
+    ]
   }

@@ -2,21 +2,25 @@
 
 This repository contains a bunch of extensions developed by a group of collegues to make (real|work) life better!
 
-## :)
+## Installation
 
-## Jira-Gitlab
+1. Download the archive.
+2. Extract it on your computer.
+3. Add to your extensions by going chrome://extensions/ and click "load unpacked". \
+![image](https://user-images.githubusercontent.com/66259954/196709614-6471a04d-cecb-4dd5-80b0-42c727d63ed5.png)
 
-It generates links into JIRA to open a diff in Gitlab to compare the branch with master.
 
-### Installation
-
-To test those extensions, download this folder and follow the steps in the link below
-
-<https://developer.chrome.com/docs/extensions/mv3/getstarted/>
+⚠ The archive contains several extensions. When you load an extension you need to choose the folder corresponding to the extension.
 
 ---
+## Extensions
+### Jira-Gitlab
 
-## Browser Stats
+Adds some icons to JIRA ticket page
+- Copy button
+- Link to Gitlab repo compare
+
+### Browser Stats
 Shows stats about your browser usage
 
 - Number of tabs in the last 24 hours

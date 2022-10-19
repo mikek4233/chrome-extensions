@@ -22,8 +22,8 @@ function handleSubmit(event) {
 // Add 2 inputs for the repos (load them if they exist in chrome storage)
 function constructOptions() {
   chrome.storage.sync.get("repos", (data) => {
-    let dev = data.repos.dev;
-    let sl  = data.repos.sl; 
+    let dev = data.repos ? data.repos.dev : "";
+    let sl  = data.repos ? data.repos.sl : "";
 
     let inputDev = document.getElementById("devRepo");
     let inputSl  = document.getElementById("slRepo");

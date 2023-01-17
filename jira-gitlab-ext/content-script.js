@@ -7,14 +7,14 @@ window.addEventListener('load', function () {
       let dev = data.repos.dev;
       let sl  = data.repos.sl; 
       let branchName = '';
-      let branchRow = document.querySelector('[data-test-id="issue.views.field.select.common.select-inline-edit.customfield_10104"]');
+      let branchRow = document.querySelector('[data-test-id="issue.views.field.select.common.select-inline-edit.customfield_10205"]');
       let branchElt = branchRow.querySelector('div:nth-child(2) a');
-      let branchWidget = document.getElementById("jira-gitlab-field-10104");
+      let branchWidget = document.getElementById("jira-gitlab-field-10205");
   
           
       // Create container
       let svgContainer = document.createElement('span');
-      svgContainer.setAttribute("id", "jira-gitlab-field-10104");
+      svgContainer.setAttribute("id", "jira-gitlab-field-10205");
       svgContainer.setAttribute("style", "position: absolute; top: 5px; left: 100px;");
         
       if (branchElt && dev && !branchWidget) {
@@ -24,12 +24,14 @@ window.addEventListener('load', function () {
         let aSvgGit = document.createElement('a');
         aSvgGit.innerHTML = svgGitHtml;
         aSvgGit.setAttribute("href", dev + "/-/compare/master..." + branchName);
+        aSvgGit.setAttribute("title", "Link to Jira");
         aSvgGit.setAttribute("target", "_blank");
         svgContainer.append(aSvgGit);
   
         // Create copy branch name
         let spanSvgCopy = document.createElement('span');
         spanSvgCopy.setAttribute("style", "cursor: pointer;");
+        spanSvgCopy.setAttribute("title", "Copy branch name");
         spanSvgCopy.innerHTML = svgCopyHtml;
         spanSvgCopy.addEventListener('click', () => {
           navigator.clipboard.writeText(branchName);
@@ -38,29 +40,30 @@ window.addEventListener('load', function () {
       }
       
       let SlBranchName = '';
-      let SlBranchRow = document.querySelector('[data-test-id="issue.views.field.single-line-text-inline-edit.customfield_11024"]');
-      let SlBranchElt = SlBranchRow.querySelector('[data-test-id="issue.views.field.single-line-text-inline-edit.read-view.customfield_11024"]');
-      let SlBranchWidget = document.getElementById("jira-gitlab-field-11024");
+      let SlBranchRow = document.querySelector('[data-test-id="issue.views.field.single-line-text-inline-edit.customfield_10209"]');
+      let SlBranchElt = SlBranchRow.querySelector('[data-test-id="issue.views.field.single-line-text-inline-edit.read-view.customfield_10209"]');
+      let SlBranchWidget = document.getElementById("jira-gitlab-field-10209");
   
       if (SlBranchElt && sl && !SlBranchWidget) {
         SlBranchName = SlBranchElt.innerText;
   
-  
         // Create container
         let svgContainer = document.createElement('span');
-        svgContainer.setAttribute("id", "jira-gitlab-field-11024");
+        svgContainer.setAttribute("id", "jira-gitlab-field-10209");
         svgContainer.setAttribute("style", "position: absolute; top: 5px; left: 100px;");
-  
+          
         // Create link to Gitlab
         let aSvgGit = document.createElement('a');
         aSvgGit.innerHTML = svgGitHtml;
         aSvgGit.setAttribute("href", sl + "/compare/master..." + SlBranchName);
+        aSvgGit.setAttribute("title", "Link to Jira");
         aSvgGit.setAttribute("target", "_blank");
         svgContainer.append(aSvgGit);
   
         // Create copy branch name
         let spanSvgCopy = document.createElement('span');
         spanSvgCopy.setAttribute("style", "cursor: pointer;");
+        spanSvgCopy.setAttribute("title", "Copy branch name");
         spanSvgCopy.innerHTML = svgCopyHtml;
         spanSvgCopy.addEventListener('click', () => {
           navigator.clipboard.writeText(SlBranchName);

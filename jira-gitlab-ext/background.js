@@ -19,7 +19,9 @@ chrome.tabs.onUpdated.addListener( function (tabId, changeInfo, tab) {
   if (changeInfo.status == 'complete' && tab.active) {
     chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
       if (tab.url != "" && tab.url.includes('.atlassian.net/browse/')){
-        chrome.tabs.executeScript(tab.id, {file: 'content-script.js'}, ([results]) => {
+        chrome.scripting.executeScript({
+          target: {tabId: tab.id, allFrames: true},
+          files: ['content-script.js']
         });
       }
   });
